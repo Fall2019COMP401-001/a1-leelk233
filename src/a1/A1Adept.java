@@ -43,8 +43,8 @@ public class A1Adept {
 		}
 	}
 		scan.close();
-		System.out.println(min(sum));
-		System.out.println(sum.length);
+		//System.out.println(min(sum));
+		//System.out.println(sum.length);
 		System.out.println("Biggest: " + first_name[max(sum)] + " " + last_name[max(sum)] + " (" + String.format("%.2f", sum[max(sum)]) + ")");
 		System.out.println("Smallest: " + first_name[min(sum)] + " " + last_name[min(sum)] + " (" + String.format("%.2f", sum[min(sum)]) + ")");
 		System.out.println("Average: " + String.format("%.2f", (average / count2)));
