@@ -1,5 +1,6 @@
 package a1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class A1Novice {
@@ -9,7 +10,7 @@ public class A1Novice {
 		Scanner scan = new Scanner(System.in);
 
 		// Your code follows here.
-		
+
 		int count = scan.nextInt();
 		
 		String[] first_names = new String[count];
@@ -28,18 +29,18 @@ public class A1Novice {
 					double numbers_bought = scan.nextInt();
 					String name_item = scan.next();
 					double price_item = scan.nextDouble();
-					sum[i] = sum [i] + (numbers_bought * price_item);
+					sum[i] = (sum[i] + (numbers_bought * price_item));
 
 				}
 		}
 		
 
 		scan.close();
+	
 		
 		for (int i=0; i<count; i++) {
-			System.out.println(first_names[i].charAt(0) + ". " + last_names[i] + (": ") + sum[i]);
+			System.out.println(first_names[i].charAt(0) + ". " + last_names[i] + (": ") + String.format("%.2f", sum[i]));
 		}
-		
 		// System.out.println(values);
 		// System.out.println(count);
 		// String s1 = "Smith Test";
