@@ -23,9 +23,9 @@ public class A1Adept {
 		
 		int count2 = scan.nextInt();
 		double[] sum = new double[count2];
-		String[] first_name = new String[count];
-		String[] last_name = new String[count];
-		int[] amount_bought = new int[count];
+		String[] first_name = new String[count2];
+		String[] last_name = new String[count2];
+		int[] amount_bought = new int[count2];
 		for (int i = 0; i<count2; i++) {
 			first_name[i] = scan.next();
 			last_name[i] = scan.next();
@@ -84,4 +84,13 @@ Carrie Brownstein 3 2 Banana 1 Orange 2 Milk
 Corin Tucker 2 3 Banana 2 Sponge
 Janet Weiss 1 5 Salami
 
+1
+Grape 0.003
+2
+Alexander Hamilton
+1
+2 Grape
+Aaron Burr
+1
+3 Grape
 */
