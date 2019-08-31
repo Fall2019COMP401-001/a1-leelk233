@@ -16,6 +16,7 @@ public class A1Jedi {
 		double[] item_price = new double[count];
 		int[] item_amount_bought = new int[count];
 		int[] amount_customers_that_bought = new int[count];
+		boolean[] norepeat = new boolean[count];
 		
 		
 		for (int i = 0; i<count; i++) {
@@ -31,23 +32,36 @@ public class A1Jedi {
 		for (int i = 0; i<count2; i++) {
 			first_name[i] = scan.next();
 			last_name[i] = scan.next();
-			amount_bought[i] = scan.nextInt();			
-			for (int n = 0; n < amount_bought[i]; n++) {
-				int amount_item_bought = scan.nextInt();
-				String item_bought = scan.next();
+			amount_bought[i] = scan.nextInt();
+			for (int n = 0; n < amount_bought[i]; n++) {	
+				int[] amount_item_bought = new int[amount_bought[i]];
+				String[] item_bought = new String[amount_bought[i]];
+				amount_item_bought[n] = scan.nextInt();
+				item_bought[n] = scan.next();
 				for (int j = 0; j < count; j++) {
-					if (item_bought.equals(item_name[j])) {
-						item_name[j] = item_bought;
-						item_amount_bought[j] = item_amount_bought[j] + amount_item_bought;
-						amount_customers_that_bought[j] = amount_customers_that_bought[j] + 1;
+					if (item_bought[n].equals(item_name[j])) {
+						item_name[j] = item_bought[n];
+						item_amount_bought[j] = item_amount_bought[j] + amount_item_bought[n];
+						if (!norepeat[j]) {
+							amount_customers_that_bought[j] = amount_customers_that_bought[j] + 1;
+							norepeat[j] = true;
+						}
 					}
-				}
 
+					
+
+				}
+				
 		}
+			for (int n = 0; n < norepeat.length; n++) {
+				norepeat[n] = false;
+			}
 	}
+
+		System.out.println(norepeat[0]);
 		scan.close();
 		for (int i = 0; i<count; i++) {
-			System.out.println(customers(amount_customers_that_bought[i]) + " customers bought " + zero(item_amount_bought[i]) + " " + item_name[i]);
+			System.out.println(customers(amount_customers_that_bought[i]) + " customers bought " + zero(item_amount_bought[i]) + item_name[i]);
 		}
 	}
 	public static String customers(int a) {
@@ -58,6 +72,10 @@ public class A1Jedi {
 		}
 	}
 	public static String zero(int a) {
-		return a + "";
+		if (a == 0) {
+			return "";
+		} else {
+			return a + " ";
+		}
 	}
 }
