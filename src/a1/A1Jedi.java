@@ -58,7 +58,6 @@ public class A1Jedi {
 			}
 	}
 
-		System.out.println(norepeat[0]);
 		scan.close();
 		for (int i = 0; i<count; i++) {
 			System.out.println(customers(amount_customers_that_bought[i]) + " customers bought " + zero(item_amount_bought[i]) + item_name[i]);
