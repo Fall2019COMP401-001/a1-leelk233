@@ -11,7 +11,6 @@ public class A1Jedi {
 		// Your code follows here.
 		
 		int count = scan.nextInt();
-		double average = 0;
 
 		String[] item_name = new String[count];
 		double[] item_price = new double[count];
