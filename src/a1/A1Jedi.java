@@ -14,7 +14,7 @@ public class A1Jedi {
 
 		String[] item_name = new String[count];
 		double[] item_price = new double[count];
-		double[] item_amount_bought = new double[count];
+		int[] item_amount_bought = new int[count];
 		int[] amount_customers_that_bought = new int[count];
 		
 		
@@ -33,7 +33,7 @@ public class A1Jedi {
 			last_name[i] = scan.next();
 			amount_bought[i] = scan.nextInt();			
 			for (int n = 0; n < amount_bought[i]; n++) {
-				double amount_item_bought = scan.nextDouble();
+				int amount_item_bought = scan.nextInt();
 				String item_bought = scan.next();
 				for (int j = 0; j < count; j++) {
 					if (item_bought.equals(item_name[j])) {
@@ -47,7 +47,7 @@ public class A1Jedi {
 	}
 		scan.close();
 		for (int i = 0; i<count; i++) {
-			System.out.println(customers(amount_customers_that_bought[i]) + " customers bought " + String.format("%.0f", item_amount_bought[i]) + " " + item_name[i]);
+			System.out.println(customers(amount_customers_that_bought[i]) + " customers bought " + zero(item_amount_bought[i]) + " " + item_name[i]);
 		}
 	}
 	public static String customers(int a) {
@@ -56,5 +56,8 @@ public class A1Jedi {
 		} else {
 			return "" + a;
 		}
+	}
+	public static String zero(int a) {
+		return a + "";
 	}
 }
